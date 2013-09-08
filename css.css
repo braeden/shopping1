@@ -1,0 +1,50 @@
+.start p { 	
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	font-size: 3em;
+	color: Blue;
+}
+.start p:hover{ 	
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	font-size: 3em;
+	color: red;
+}
+.input {
+
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	vertical-align: middle;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	margin-top: 10px;
+	}
+
+#higher {
+	text-align: center;
+	
+	Display: none;
+}
+#lower {
+	text-align: center;
+	
+	Display: none;
+}
+#won {
+	text-align: center;
+	
+	Display: none;
+}
+#begin {
+	text-align: center;
+	
+	Display: block;
+}
+
+

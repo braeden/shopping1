@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shopping List</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+        function onLoad() {
+            count=0;
+			num=0;
+			
+        }
+        window.onload = onLoad;
+
+
+
+
+function deleteItem()
+{
+numx=count-num;
+
+n = count.toString();
+	var j = document.getElementById("1");
+    if (j.checked) {
+
+		var parent=document.getElementById("form");
+		var child=document.getElementById("1");
+		var parentx=document.getElementById("form");
+		var childx=document.getElementById("sp");
+		var parentb=document.getElementById("form");
+		var childb=document.getElementById("br");
+		parent.removeChild(child);
+		parentx.removeChild(childx);
+		parentb.removeChild(childb);
+		var num = num+1;
+		numx=count-num;
+		} else if (document.getElementById("2").checked)
+		{
+		
+		var parent=document.getElementById("form");
+		var child=document.getElementById("2");
+		var parentx=document.getElementById("form");
+		var childx=document.getElementById("sp");
+		var parentb=document.getElementById("form");
+		var childb=document.getElementById("br");
+		parent.removeChild(child);
+		parentx.removeChild(childx);
+		parentb.removeChild(childb)
+  
+    } else {
+        alert("Nothing to Delete")
+    }
+
+
+}
+
+
+function addItem()
+
+{
+
+count=count+1;
+
+var elementId=new Array(); 
+elementId[0]="0";       
+elementId[1]="1";  
+elementId.push(""+ count +"")
+
+var check = check+1
+
+var items = document.getElementById('input').value;
+
+if(/^\s*$/.test(items)){
+    //has spaces
+	alert("Please insert a Item");
+	return;
+}
+var elid=elementId[""+ count +""];
+
+var para=document.createElement("input");
+    para.type = 'checkbox';
+	para.name = "val";
+    para.value = " "+ items +" ";
+	para.id = ""+ elid +"";
+
+var text=document.createElement("span");
+	text.id = "sp";
+var tx=document.createTextNode(" "+ items +" ");
+text.appendChild(tx);
+
+var element=document.getElementById("form");
+element.appendChild(para);
+element.appendChild(text);
+
+	var mybr = document.createElement('br');
+	mybr.id = "br";
+element.appendChild(mybr);
+
+document.getElementById("id").className = "id";
+document.getElementById("sp").className = "sp";
+document.getElementById("br").className = "br";
+
+}
+</script>
+<script>
+
+$(document).ready(function(){
+	$( "#del" ).click(function() {
+  		$('input:checked').closest('#br').remove();
+		$('input:checked').closest('span').remove();
+		$('input:checked').closest('input').remove();
+});
+		
+
+	
+});
+</script>
+
+<link type="text/css" rel="stylesheet" href="css.css"/>
+</head>
+<header>
+</header>
+<body>
+<div class=start>
+<p>Shopping List</p>
+</div>
+<div class=input>
+<input type="input" id="input" name="input" placeholder="New Item">
+<br/>
+<span>
+<input type="button" onclick="addItem()" value="Add">
+</div>
+</span>
+
+<input type="button" id="del" onclick="clearItem()" value="Delete">
+<form>
+<div id=form>
+
+</div>
+</form>
+
+
+</body>
+<footer>
+</footer>
+</html>
